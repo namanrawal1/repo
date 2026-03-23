@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+               git branch: 'main', url: 'git@github.com:namanrawal1/cicd.git'
             }
-            git branch: 'main', url: 'git@github.com:namanrawal1/cicd.git'
         }
 
         stage('System Info') {
