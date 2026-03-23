@@ -1,8 +1,10 @@
-FROM python:3
+FROM nginx:latest
 
-WORKDIR /app
-COPY . /app
+# Remove default nginx content
+RUN rm -rf /usr/share/nginx/html/*
 
-RUN pip install flask
+# Copy your website
+COPY index.html /usr/share/nginx/html/
 
-CMD ["python", "app.py"]
+# Expose port
+EXPOSE 80
