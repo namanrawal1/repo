@@ -11,12 +11,6 @@ pipeline {
             }
         }  
 
-        stage('Checkout') {
-            steps {
-                git branch: 'main', url: 'git@github.com:namanrawal1/cicd.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t myapp .'
