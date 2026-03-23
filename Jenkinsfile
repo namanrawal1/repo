@@ -3,6 +3,7 @@ pipeline {
     environment {
     PATH = "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
     }
+     stages{
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t my-nginx-app .'
@@ -18,3 +19,4 @@ pipeline {
             }
         }
     }
+}
