@@ -1,20 +1,18 @@
 pipeline {
     agent any
-    stages {
-        stage('Checkout Code') {
-            steps {
-                git branch: 'main', url: 'git@github.com:namanrawal1/cicd.git'
-            }
 
-        }
-        stage('Build') {
+    stages {
+        stage('Checkout') {
             steps {
-                echo 'Building Application...'
+                git 'https://github.com/<your-username>/jenkins-demo.git'
             }
         }
-        stage('Test') {
+
+        stage('System Info') {
             steps {
-                echo 'Testing application..'
+                sh 'whoami'
+                sh 'pwd'
+                sh 'ls -lrt'
             }
         }
     }
