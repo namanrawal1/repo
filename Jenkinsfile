@@ -14,7 +14,7 @@ pipeline {
             steps {
                 sh '''
                 docker rm -f nginx-container || true
-                docker run -d -p 8080:80 --name nginx-container my-nginx-app
+                docker run -d -p 9090:80 --name nginx-container my-nginx-app
                 '''
             }
         }
