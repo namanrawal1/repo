@@ -1,6 +1,6 @@
 FROM nginx:latest
 
-# Remove default nginx content
+## Remove default nginx content
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copy your website
